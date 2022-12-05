@@ -5,7 +5,22 @@ type HomesStyledTypes = {
 };
 
 export const HomeStyled = styled.div<HomesStyledTypes>`
-  width: 100%;
+  section {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    color: ${(props) => props.theme.lightColor};
+  }
+
+  .content {
+    width: 70vw;
+  }
+
   header {
     background-color: ${(props) => props.theme.header};
     height: 50px;
@@ -13,6 +28,9 @@ export const HomeStyled = styled.div<HomesStyledTypes>`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 
     .menu-icon {
       color: white;
@@ -59,6 +77,73 @@ export const HomeStyled = styled.div<HomesStyledTypes>`
           gap: 0;
         }
       }
+    }
+  }
+
+  .home {
+    background-color: ${(props) => props.theme.background};
+    display: flex;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .presentation {
+        width: 40%;
+        h1 {
+          font-size: 2.2rem;
+          color: ${(props) => props.theme.textColor};
+          line-height: 40px;
+
+          #myName {
+            font-weight: 600;
+            color: ${(props) => props.theme.lightColor};
+          }
+        }
+
+        p {
+          line-height: 30px;
+          margin-top: 25px;
+          color: #d9d9d9;
+          margin-bottom: 50px;
+        }
+
+        .btn-download {
+          padding: 20px 45px;
+          background-color: ${(props) => props.theme.primaryColor};
+          color: ${(props) => props.theme.textColor};
+          font-weight: bold;
+          cursor: pointer;
+          transition: all ease 0.2s;
+
+          &:hover {
+            background-color: #3d5676;
+          }
+        }
+        @media screen and (max-width: 850px) {
+          width: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: 850px) {
+      .presentation {
+        width: 100%;
+      }
+      .photo {
+        display: none;
+      }
+    }
+  }
+
+  .habilidades {
+    background-color: ${(props) => props.theme.background};
+
+    .card-area {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 `;
