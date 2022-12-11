@@ -7,6 +7,7 @@ export const HabilityCardStyle = styled.div`
   border-radius: 25px;
   margin-top: 50px;
   padding: 30px;
+  position: relative;
 
   .header {
     display: flex;
@@ -19,5 +20,14 @@ export const HabilityCardStyle = styled.div`
   .text {
     margin-top: 20px;
     color: #fff;
+  }
+
+  .decoration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: ${(props) => props.theme.primaryColor};
+    padding: 38px 0 0 38px;
+    border-radius: 30px 0 30px 0;
   }
 `;

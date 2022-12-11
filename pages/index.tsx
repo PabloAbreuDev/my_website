@@ -12,59 +12,80 @@ import mongo_icon from "../public/icons/mongodb-original.svg";
 import mysql_icon from "../public/icons/mysql-original.svg";
 import nextjs_icon from "../public/icons/nextjs-original.svg";
 import react_icon from "../public/icons/react-original.svg";
-import wordpress_icon from "../public/icons/wordpress-original.svg";
 import postgres_icon from "../public/icons/postgresql-original.svg";
+import ExperienceCard from "../components/experience_card";
 
 export default function Home() {
-  const [active, setActive] = useState<boolean>(true);
+  const [active, setActive] = useState<boolean>(false);
 
   const habilidades = [
     {
       photo: react_icon,
+      alt: "Ícone do ReactJS",
       name: "ReactJS",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: mongo_icon,
+      alt: "Ícone do MongoDB",
       name: "MongoDB",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: firebase_icon,
+      alt: "Ícone do Firebase",
       name: "Firebase",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: flutter_icon,
+      alt: "Ícone do Flutter",
       name: "Flutter",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: node_icon,
+      alt: "Ícone do NodeJS",
       name: "Node JS",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: express_icon,
+      alt: "Ícone do ExpressJS",
       name: "Express",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: mysql_icon,
+      alt: "Ícone do MySQL",
       name: "Mysql",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: nextjs_icon,
+      alt: "Ícone do NextJS",
       name: "NextJS",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
     {
       photo: postgres_icon,
+      alt: "Ícone do PostgreSQL",
       name: "PostgresSQL",
       text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
     },
   ];
+
+  const experiencias = [{
+    logo: react_icon,
+    name: "SECAP - MA",
+    period: "De Janeiro 2021 - Dezembro 2022",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae"
+  }, {
+    logo: react_icon,
+    name: "SECAP - MA",
+    period: "De Janeiro 2021 - Dezembro 2022",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae"
+  }]
 
   return (
     <HomeStyled active={active}>
@@ -111,9 +132,7 @@ export default function Home() {
             </h1>
             <div>
               <p>
-                Trabalho com o ecossistema javascript e estou aqui para
-                corrrigir uns bugs, criar soluções e tomar algumas chícaras de
-                café!{" "}
+                Atualmente estou focado em NodeJS e NextJS, tenho um bom conjunto de habilidades técnicas, paixão por código limpo e boa performance.
               </p>
             </div>
 
@@ -147,6 +166,11 @@ export default function Home() {
         <div className="content">
           <div className="title-area">
             <h1 className="title">Experiências</h1>
+          </div>
+          <div className="experiences">
+            {experiencias.map((item, index) => (
+              <ExperienceCard key={index} props={item} />
+            ))}
           </div>
         </div>
       </section>

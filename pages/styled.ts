@@ -42,6 +42,7 @@ export const HomeStyled = styled.div<TypeNavbar>`
         font-weight: bold;
         color: ${(props) => props.theme.lightColor};
         display: none;
+        opacity: 0;
       }
 
       .toggle-button {
@@ -143,6 +144,7 @@ export const HomeStyled = styled.div<TypeNavbar>`
           margin-top: 10px;
           line-height: 25px;
           width: 80%;
+          opacity: 53%;
         }
       }
 
@@ -210,8 +212,20 @@ export const HomeStyled = styled.div<TypeNavbar>`
     background-color: ${(props) => props.theme.background};
     .content {
       display: flex;
-      align-items: flex-start;
       flex-direction: column;
+      align-items: flex-start;
+
+      .experiences {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+      }
+    }
+
+    @media screen and (${breakpoints.device.ipad}) {
+      .content {
+        align-items: center;
+      }
     }
   }
 `;
