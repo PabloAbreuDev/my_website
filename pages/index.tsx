@@ -15,6 +15,9 @@ import react_icon from "../public/icons/react-original.svg";
 import postgres_icon from "../public/icons/postgresql-original.svg";
 import ExperienceCard from "../components/experience_card";
 
+import Link from 'next/link'
+import ProjectCard from "../components/project_card";
+
 export default function Home() {
   const [active, setActive] = useState<boolean>(false);
 
@@ -87,6 +90,31 @@ export default function Home() {
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae"
   }]
 
+  const projetos = [{
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "Nome do Projeto",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  }, {
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "ReactJS",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  }, {
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "ReactJS",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  }, {
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "ReactJS",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  },]
   return (
     <HomeStyled active={active}>
       <header>
@@ -102,27 +130,27 @@ export default function Home() {
             <span className="bar"></span>
           </a>
           <div className="navbar-links">
-            <ul>
+            <ul onClick={() => setActive(false)}>
               <li>
-                <a href="#">Home</a>
+                <a href="#home" >Home</a>
               </li>
               <li>
-                <a href="#">Habilidades</a>
+                <a href="#habilidades">Habilidades</a>
               </li>
               <li>
-                <a href="#">Experiências</a>
+                <a href="#experiencias">Experiências</a>
               </li>
               <li>
-                <a href="#">Projetos</a>
+                <a href="#projetos">Projetos</a>
               </li>
               <li>
-                <a href="#">Contato</a>
+                <a href="#contato">Contato</a>
               </li>
             </ul>
           </div>
         </nav>
       </header>
-      <section className="home">
+      <section id="home" className="home">
         <div className="content">
           <div className="presentation">
             <h1>
@@ -149,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="habilidades">
+      <section id="habilidades" className="habilidades">
         <div className="content">
           <div className="title-area">
             <h1 className="title">Habilidades</h1>
@@ -162,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experiencias">
+      <section id="experiencias" className="experiencias">
         <div className="content">
           <div className="title-area">
             <h1 className="title">Experiências</h1>
@@ -174,6 +202,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section id="projetos" className="projetos">
+        <div className="content">
+          <div className="title-area">
+            <h1 className="title">Projetos</h1>
+          </div>
+          <div className="projetos-area">
+            {projetos.map((item, index) => (
+              <ProjectCard key={index} props={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
     </HomeStyled>
   );
 }

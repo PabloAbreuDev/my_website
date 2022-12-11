@@ -6,6 +6,7 @@ type TypeNavbar = {
 };
 
 export const HomeStyled = styled.div<TypeNavbar>`
+  scroll-behavior: smooth;
   overflow-x: hidden;
   .content {
     display: flex;
@@ -27,8 +28,10 @@ export const HomeStyled = styled.div<TypeNavbar>`
   }
   header {
     .navbar {
+      z-index: 999;
+      top: 0;
       display: flex;
-      position: absolute;
+      position: fixed;
       justify-content: center;
       align-items: center;
       padding: 2px 0;
@@ -225,6 +228,30 @@ export const HomeStyled = styled.div<TypeNavbar>`
     @media screen and (${breakpoints.device.ipad}) {
       .content {
         align-items: center;
+      }
+    }
+  }
+
+  .projetos {
+    background-color: ${(props) => props.theme.background};
+    .content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .projetos-area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+    @media screen and (${breakpoints.device.ipad}) {
+      .content {
+        align-items: center;
+        .projetos-area {
+          justify-content: center;
+          gap: 10px;
+        }
       }
     }
   }
