@@ -255,4 +255,30 @@ export const HomeStyled = styled.div<TypeNavbar>`
       }
     }
   }
+
+  .contatos {
+    background-color: ${(props) => props.theme.background};
+    .content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .contatos-area {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media screen and (${breakpoints.device.ipad}) {
+      .content {
+        align-items: center;
+        .contatos-area {
+          justify-content: center;
+          gap: 20px;
+        }
+      }
+    }
+  }
 `;

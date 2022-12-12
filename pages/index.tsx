@@ -3,6 +3,8 @@ import { HomeStyled } from "./styled";
 import Lottie from "react-lottie-player";
 import lottieJson from "../public/lottieanimation.json";
 import HabilityCard from "../components/hability_card";
+import ExperienceCard from "../components/experience_card";
+
 // Icons
 import node_icon from "../public/icons/nodejs-plain.svg";
 import express_icon from "../public/icons/express-original.svg";
@@ -13,10 +15,13 @@ import mysql_icon from "../public/icons/mysql-original.svg";
 import nextjs_icon from "../public/icons/nextjs-original.svg";
 import react_icon from "../public/icons/react-original.svg";
 import postgres_icon from "../public/icons/postgresql-original.svg";
-import ExperienceCard from "../components/experience_card";
+import smartphone_icon from "../public/icons/smartphone.svg";
+import mail_icon from "../public/icons/mail.svg";
+import linkedin_icon from "../public/icons/in.svg";
+import github_icon from "../public/icons/hub.svg";
 
-import Link from 'next/link'
 import ProjectCard from "../components/project_card";
+import ContactCard from "../components/contact_card";
 
 export default function Home() {
   const [active, setActive] = useState<boolean>(false);
@@ -114,7 +119,46 @@ export default function Home() {
     name: "ReactJS",
     type: "Fullstack",
     text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  }, {
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "ReactJS",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
+  }, {
+    photo: react_icon,
+    alt: "Ícone do ReactJS",
+    name: "ReactJS",
+    type: "Fullstack",
+    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. ",
   },]
+
+  const contacts = [
+    {
+      icon: smartphone_icon,
+      name: "Whatsapp",
+      content: "(98) 98125-3423",
+      link: "https://api.whatsapp.com/send?phone=98981253423"
+    },
+    {
+      icon: mail_icon,
+      name: "Email",
+      content: "pabloabreudev@gmail.com",
+      link: "mailto:pabloabreudev@gmail.com"
+    },
+    {
+      icon: linkedin_icon,
+      name: "Linkedin",
+      content: "pablodev95",
+      link: "https://www.linkedin.com/in/pablodev95/"
+    },
+    {
+      icon: github_icon,
+      name: "Github",
+      content: "PabloAbreuDev",
+      link: "https://github.com/PabloAbreuDev"
+    },]
+
   return (
     <HomeStyled active={active}>
       <header>
@@ -144,7 +188,7 @@ export default function Home() {
                 <a href="#projetos">Projetos</a>
               </li>
               <li>
-                <a href="#contato">Contato</a>
+                <a href="#contatos">Contato</a>
               </li>
             </ul>
           </div>
@@ -213,6 +257,24 @@ export default function Home() {
               <ProjectCard key={index} props={item} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="contatos" className="contatos">
+        <div className="content">
+          <div className="title-area">
+            <h1 className="title">Contatos</h1>
+          </div>
+
+          <div className="contatos-area">
+            {contacts.map((item, index) => (
+              <ContactCard key={index} props={item} />
+            ))}
+          </div>
+
+
+
+
         </div>
       </section>
 
