@@ -11,7 +11,7 @@ type ContactCardType = {
 function ContactCard({ props }: { props: ContactCardType }) {
     return <a href={props.link} target="blank" style={{ textDecoration: "none" }}>
         <ContactCardStyled>
-            <Image width={70} height={70} src={props.icon} alt="Ícone do elemento" />
+            <Image width={50} height={50} src={props.icon} alt="Ícone do elemento" />
             <h3>{props.name}</h3>
             <p>{props.content}</p>
 
