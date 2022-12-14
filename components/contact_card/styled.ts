@@ -8,6 +8,7 @@ export const ContactCardStyled = styled.div`
   color: ${(props) => props.theme.textColor};
   border-radius: 25px;
   transition: ease 0.1s;
+  margin-top: 20px;
 
   h3 {
     margin: 15px 0 10px 0;

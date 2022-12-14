@@ -5,6 +5,8 @@ export const ExperienceCardStyled = styled.div`
   display: flex;
   width: 80%;
   .logo-area {
+    width: 100px;
+    height: 100px;
     padding: 40px;
     border-radius: 100%;
     background-color: ${(props) => props.theme.secondaryColor};

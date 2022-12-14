@@ -5,7 +5,6 @@ export const ProjectCardStyled = styled.div`
   width: 250px;
   height: 200px;
   border-radius: 25px;
-  margin-top: 50px;
   padding: 30px;
   color: ${(props) => props.theme.textColor};
   .header {

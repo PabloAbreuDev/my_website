@@ -138,7 +138,7 @@ export default function Home() {
       icon: smartphone_icon,
       name: "Whatsapp",
       content: "(98) 98125-3423",
-      link: "https://api.whatsapp.com/send?phone=98981253423"
+      link: "https://api.whatsapp.com/send?phone=5598981253423"
     },
     {
       icon: mail_icon,

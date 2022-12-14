@@ -20,10 +20,25 @@ export const HomeStyled = styled.div<TypeNavbar>`
     }
   }
   .title-area {
-    padding: 0 0 50px 0;
+    padding: 0 0 70px 0;
     .title {
       font-size: 2.2rem;
       color: ${(props) => props.theme.lightColor};
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100px;
+        height: 5px;
+        background-color: ${(props) => props.theme.lightColor};
+      }
+      @media screen and (${breakpoints.device.lg}) {
+        &:before {
+          display: none;
+        }
+      }
     }
   }
   header {
@@ -199,6 +214,7 @@ export const HomeStyled = styled.div<TypeNavbar>`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 70px;
       }
     }
     @media screen and (${breakpoints.device.ipad}) {
@@ -243,6 +259,7 @@ export const HomeStyled = styled.div<TypeNavbar>`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 70px;
       }
     }
     @media screen and (${breakpoints.device.ipad}) {
@@ -250,7 +267,6 @@ export const HomeStyled = styled.div<TypeNavbar>`
         align-items: center;
         .projetos-area {
           justify-content: center;
-          gap: 10px;
         }
       }
     }
@@ -276,7 +292,7 @@ export const HomeStyled = styled.div<TypeNavbar>`
         align-items: center;
         .contatos-area {
           justify-content: center;
-          gap: 20px;
+          gap: 40px;
         }
       }
     }
